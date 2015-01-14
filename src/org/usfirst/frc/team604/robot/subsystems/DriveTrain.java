@@ -20,19 +20,28 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * and a gyro.
  */
 public class DriveTrain extends Subsystem {
+	// we have 4 motors/speed controllers on the chassis
 	private SpeedController front_left_motor, back_left_motor,
 							front_right_motor, back_right_motor;
+	
 	private RobotDrive drive;
+	
+	// 2 encoders 
 	private Encoder left_encoder, right_encoder;
-	private AnalogInput rangefinder;
-	private Gyro gyro;
+	
+	//private AnalogInput rangefinder;
+	
+	//private Gyro gyro;
 
 	public DriveTrain() {
+		
 		super();
-		front_left_motor = new Talon(1);
-		back_left_motor = new Talon(2);
+		
+		front_left_motor  = new Talon(1);
+		back_left_motor   = new Talon(2);
 		front_right_motor = new Talon(3);
-		back_right_motor = new Talon(4);
+		back_right_motor  = new Talon(4);
+		
 		drive = new RobotDrive(front_left_motor, back_left_motor,
 							   front_right_motor, back_right_motor);
 		left_encoder = new Encoder(1, 2);
